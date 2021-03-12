@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentContainer"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <fragment
+            android:id="@+id/editFragment"
+            android:name="fr.imt_atlantique.example.communication.EditFragment"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <fragment
+            android:id="@+id/displayFragment"
+            android:name="fr.imt_atlantique.example.communication.DisplayFragment"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+</FrameLayout>
