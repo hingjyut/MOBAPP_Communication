@@ -37,9 +37,6 @@ public class EditFragment extends Fragment {
         return rootView;
     }
 
-    public void setNewName(String name){
-        newNameEt.setText(name);
-    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState ){

@@ -2,6 +2,7 @@ package fr.imt_atlantique.example.communication;
 
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,6 @@ public class DisplayFragment extends Fragment {
     private View rootView;
     public static final String ARG_PARAM = "new name";
     protected String newName;
-
 
 
     @Override
@@ -48,4 +48,11 @@ public class DisplayFragment extends Fragment {
         return displayFragment;
     }
 
+    public void displayName(String newName){
+        tvDisplayName = (TextView) getView().findViewById(R.id.tvDisplayName);
+        if (tvDisplayName!=null&&newName!=null){
+            tvDisplayName.setText(newName);
+
+        }
+    }
 }

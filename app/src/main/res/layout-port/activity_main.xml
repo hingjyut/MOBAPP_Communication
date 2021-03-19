@@ -1,75 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragmentContainer"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame"
     >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text ="@string/app_name"
+                android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/name_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text ="@string/app_name"-->
-<!--            android:orientation="vertical">-->
+            <fragment
+                android:id="@+id/editFragment"
+                android:name="fr.imt_atlantique.example.communication.EditFragment"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <fragment
+                android:id="@+id/displayFragment"
+                android:name="fr.imt_atlantique.example.communication.DisplayFragment"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
-<!--        <fragment-->
-<!--            android:id="@+id/editFragment"-->
-<!--            android:name="fr.imt_atlantique.example.communication.EditFragment"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"/>-->
-<!--        <fragment-->
-<!--            android:id="@+id/displayFragment"-->
-<!--            android:name="fr.imt_atlantique.example.communication.DisplayFragment"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"/>-->
+        </LinearLayout>
+</LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/name_layout"-->
-<!--        android:layout_width="match_parent"-->
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="match_parent"-->
-<!--        android:text ="@string/app_name"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/question_tv"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:textSize="30dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:text="@string/ask_question"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/question_et"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:inputType="text"-->
-<!--            android:textSize="30dp"-->
-<!--            />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/question_bt"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="30dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:text="@string/submit"-->
-<!--            android:onClick="askQuestion"-->
-<!--            />-->
-
-<!--        <Spinner-->
-<!--            android:entries="@array/languages"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/lang_spinner"-->
-<!--            />-->
-
-<!--    </LinearLayout>-->
-</FrameLayout>
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:context=".MainActivity"-->
+<!--        tools:ignore="MergeRootFrame"-->
+<!--        >-->
+<!--    </FrameLayout>-->
