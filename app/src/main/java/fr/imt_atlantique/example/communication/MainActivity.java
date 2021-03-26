@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainer;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Display;
 
@@ -13,8 +15,10 @@ public class MainActivity extends AppCompatActivity implements EditFragment.OnEd
 
     private EditFragment editFragment;
     private DisplayFragment displayFragment;
-    static boolean portrait;
 
+    private static final String PREFERENCE = "preference";
+    private static final String Display_KEY = "display";
+    private SharedPreferences sharedPreferences;
 
     /**
      * Static
@@ -23,14 +27,37 @@ public class MainActivity extends AppCompatActivity implements EditFragment.OnEd
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        sharedPreferences = getSharedPreferences(PREFERENCE, Context.MODE_PRIVATE);
+        editFragment =  (EditFragment) getSupportFragmentManager().findFragmentById(R.id.editFragment);
+        displayFragment = (DisplayFragment) getSupportFragmentManager().findFragmentById(R.id.displayFragment);
+        String displayText = sharedPreferences.getString(Display_KEY, "");
+        onEditName(displayText);
     }
 
 
     @Override
     public void onEditName(String newName) {
-        displayFragment = (DisplayFragment) getSupportFragmentManager().findFragmentById(R.id.displayFragment);
         displayFragment.displayName(newName);
+    }
+
+
+    @Override
+    protected void onStop() {
+        saveData();
+        super.onStop();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        saveData();
+    }
+
+
+    private void saveData() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Display_KEY, editFragment.getData().getText().toString());
+        editor.apply();
     }
 
 

@@ -52,7 +52,6 @@ public class DisplayFragment extends Fragment {
         tvDisplayName = (TextView) getView().findViewById(R.id.tvDisplayName);
         if (tvDisplayName!=null&&newName!=null){
             tvDisplayName.setText(newName);
-
         }
     }
 }

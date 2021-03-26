@@ -49,4 +49,8 @@ public class EditFragment extends Fragment {
             });
         }
     }
+
+    public EditText getData(){
+        return newNameEt;
+    }
 }
